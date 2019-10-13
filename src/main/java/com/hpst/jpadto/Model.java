@@ -6,10 +6,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 
 @Entity
 @Table(name = "Model")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Model {
 	
 	@Id
@@ -23,20 +32,5 @@ public class Model {
 	@Column(name = "NAME", nullable = false)
 	private String name;
 	
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getValue() {
-		return value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
-	}
-
+	
 }

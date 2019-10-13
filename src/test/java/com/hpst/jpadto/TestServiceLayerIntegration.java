@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes=Launcher.class)
 @ActiveProfiles(profiles = "test")
-class TestDao {
+class TestServiceLayerIntegration {
 
 	@Autowired
 	DaoService service;
@@ -25,12 +26,13 @@ class TestDao {
 	
 	 
 	@Test
+	@DisplayName("Testing Service Dao Layer")
 	void testServiceDao() throws IOException {
 		
 		List<Model> dataModelList = service.getDataInModel();
 		Assertions.assertAll( 
 							() -> assertNotEquals(0,dataModelList.size()),
-							()->  assertNotEquals(null, dataModelList.get(0))
+							()->  assertNotEquals(1, dataModelList.get(0))
 		);
 	}
 

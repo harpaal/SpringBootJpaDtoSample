@@ -16,6 +16,10 @@ public class DaoService {
 		return modelJpaRepository.getDataInDto();
 	}
 	
+	Model getModelName(String name) {
+		return modelJpaRepository.findByName(name);
+	}
+	
 	public List<Model> getDataInModel() throws IOException {
 		return modelJpaRepository.getDataInModel();
 	}
