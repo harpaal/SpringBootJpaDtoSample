@@ -6,11 +6,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories
-public class Launcher {
+public class Application {
 	
 	public static void main(String[] args){
 		new SpringApplicationBuilder() //
-		.sources(Launcher.class)//
+		.sources(Application.class)//
 		.run(args);
 	}
 }

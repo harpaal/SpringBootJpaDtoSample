@@ -16,7 +16,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(classes=Launcher.class)
+@SpringBootTest(classes=Application.class)
 @ActiveProfiles(profiles = "test")
 class TestServiceLayerIntegration {
 

@@ -21,7 +21,6 @@ public class TestServiceLayer {
 
 	 @TestConfiguration
 	 static class DaoServiceTestContextConfiguration {
-
 		 @Bean
 		 DaoService daoService() {
 			 return new DaoService();
@@ -45,6 +44,8 @@ public class TestServiceLayer {
 		Mockito.when(repository.findByName("hpst")).thenReturn(model);
 	}
 
+	
+	
 	
 	@Test
 	@DisplayName("Unit test Service Layer")
